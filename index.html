@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake and Ladders</title>
-</head>
-<body>
-    <body>
-        <div class="container">
-            <img src="/assets/images/snakesandladders-logo-cc.png" alt="Snake and Ladders" width="400">
-            <h1>Welcome to Snake and Ladders!</h1>
-            <div class="menu-buttons">
-                <button onclick="startNewGame()">New Game</button>
-                <button onclick="showTutorial()">Tutorial</button>
-                <button onclick="showScoreBoard()">Score Board</button>
-            </div>
-        </div>
-    
-    </body>   
-</body>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/snakesandladders-logo-cc.png"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid m-0 main-bg">
+      <div class="row col-12 p-3 d-flex justify-content-center align-items-center">
+        <img
+          src="./assets/images/snakesandladders-logo-cc.png"
+          class="img-fluid h-50 w-50"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <button class="p-4 my-2 w-25" onclick="startNewGame()">New Game</button>
+      <button class="p-4 my-2 w-25" onclick="showTutorial()">Tutorial</button>
+      <button class="p-4 my-2 w-25" onclick="showScoreBoard()">
+        Score Board
+      </button>
+    </div>
+  </body>
+
+  <script src="./game/board.js" type="module" defer></script>
+  <script src="./createArtifacts.js" type="module" defer></script>
+  <script src="./game.js" type="module" defer></script>
+  <script src="./randomNumber.js" type="module" defer></script>
+  <script src="./test.js" type="module" defer></script>
 </html>

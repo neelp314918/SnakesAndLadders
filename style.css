@@ -1,4 +1,4 @@
-#grid-container {
+/* #grid-container {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -27,4 +27,13 @@
 .row:nth-child(even) {
 	display: flex;
 	flex-direction: row-reverse;
+} */
+*{
+	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+.main-bg{
+	background-color: #87c7cd;
 }
