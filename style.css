@@ -37,3 +37,15 @@
 .main-bg{
 	background-color: #87c7cd;
 }
+.start-btn {
+	display: flex;
+	/* flex-direction: column; */
+	border-radius: 40px;
+	justify-content: center;
+	align-items: center;
+	transition: background-color 0.3s ease;
+  }
+  .start-btn button {
+	clip-path: polygon(12% 0, 88% 0, 82% 100%, 6% 100%);
+	border-bottom: 7px solid rgb(25, 117, 25);	
+}
