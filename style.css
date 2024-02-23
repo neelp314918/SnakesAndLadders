@@ -28,30 +28,44 @@
 	display: flex;
 	flex-direction: row-reverse;
 } */
-*{
-	box-sizing: border-box;
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  font-family: "Stone Age", sans-serif;
+  cursor: url(./assets/images/icon-1.png), auto;
 }
-.main-bg{
-	background-color: #87c7cd;
+.main-bg {
+  background-color: #87c7cd;
+}
+.instruction a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+.img-1 {
+  height: 314px;
+  width: auto;
+  object-fit: contain;
 }
 .start-btn {
-	display: flex;
-	/* flex-direction: column; */
-	border-radius: 40px;
-	justify-content: center;
-	align-items: center;
-	
-  }
-  .start-btn button {
-	clip-path: polygon(12% 0, 88% 0, 82% 100%, 6% 100%);
-	border-bottom: 7px solid rgb(25, 117, 25);
-	transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border-radius: 40px;
+  justify-content: center;
+  align-items: center;
 }
-  .start-btn button:hover{
-	transform: scale(1.2);
-	border-bottom: 7px solid rgb(25, 117, 25);
+.start-btn button {
+  width: 370px;
+  border-bottom: 8px solid rgb(152, 173, 33);
+  clip-path: polygon(12% 0, 88% 0, 82% 100%, 6% 100%);
+  transition: transform 0.3s ease;
+}
+.start-btn button:hover {
+  transform: scale(1.1);
+  border-bottom: 10px solid rgb(173, 117, 33);
+  cursor: url(./assets/images/icon-2.png), auto;
 
-  }
+}
+
