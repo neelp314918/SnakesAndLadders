@@ -11,6 +11,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
+	border: 2px dashed black;
 }
 .grid-item {
 	background-color: #f0f0f0;
