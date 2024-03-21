@@ -11,9 +11,11 @@
 		/>
 
 		<link rel="stylesheet" href="./style.css" />
-    <link href="https://fonts.cdnfonts.com/css/stone-age" rel="stylesheet">
-                
-                
+		<link
+			href="https://fonts.cdnfonts.com/css/stone-age"
+			rel="stylesheet"
+		/>
+
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -29,30 +31,51 @@
 			crossorigin="anonymous"
 		/>
 
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  </head>
-  <body>
-    <div class="container-fluid m-0 main-bg py-3">
-      <div class="row float-end mx-3 mt-2 instruction">
-        <a href="./instruction.html" title=""><i class="fas fa-2x fa-info-circle"></i></a>
-      </div>
-      <div class="row p-3 d-flex justify-content-center align-items-center">
-        <img
-          src="./assets/images/snakesandladders-logo-cc.png"
-          class="img-1"
-        />
-      </div>
-      <div class="row start-btn d-flex justify-content-center align-items-center mt-4">
-        <button type="button" class="fs-3 btn btn-danger p-4 my-2" onclick="startNewGame()">New Game</button>
-        <button type="button" class="fs-3 btn btn-success p-4 my-2" onclick="showTutorial()">Tutorial</button>
-        <button type="button" class="fs-3 btn btn-primary p-4 my-2" onclick="showScoreBoard()">
-          Score Board
-        </button>
-      </div>
-    </div>
- 
-  </body>
-  <script src="./main.js" defer></script>
+		<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid m-0 main-bg py-3">
+			<div class="row float-end mx-3 mt-2 instruction">
+				<a href="./instruction.html" title=""
+					><i class="fas fa-2x fa-info-circle"></i
+				></a>
+			</div>
+			<div
+				class="row p-3 d-flex justify-content-center align-items-center"
+			>
+				<img
+					src="./assets/images/snakesandladders-logo-cc.png"
+					class="img-1"
+				/>
+			</div>
+			<div
+				class="row start-btn d-flex justify-content-center align-items-center mt-4"
+			>
+				<button
+					type="button"
+					class="fs-3 btn btn-danger p-4 my-2"
+					onclick="startNewGame()"
+				>
+					New Game
+				</button>
+				<button
+					type="button"
+					class="fs-3 btn btn-success p-4 my-2"
+					onclick="showTutorial()"
+				>
+					Tutorial
+				</button>
+				<button
+					type="button"
+					class="fs-3 btn btn-primary p-4 my-2"
+					onclick="showScoreBoard()"
+				>
+					Score Board
+				</button>
+			</div>
+		</div>
+	</body>
+	<script src="./main.js" defer></script>
 	<script src="./game/board.js" type="module" defer></script>
 	<script src="./createArtifacts.js" type="module" defer></script>
 	<script src="./game.js" type="module" defer></script>
