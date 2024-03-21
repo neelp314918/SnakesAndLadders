@@ -30,7 +30,7 @@ function createPair() {
 // }
 
 function createSnakeOrLadder(gameArtifact) {
-	for (let i = 0; i < 5; i++) {
+	for (let i = 0; i < 3; i++) {
 		let pair = createPair();
 		if (gameArtifact.name === "snake") {
 			pair.sort(function (a, b) {
