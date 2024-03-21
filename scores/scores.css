@@ -1,0 +1,35 @@
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #FD9802;
+    }
+    
+    .header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .scoreboard-image {
+        width: 400px; /
+    }
+    
+    table {
+        border-collapse: collapse;
+        width: 500px;
+        margin: 0 auto;
+    }
+    
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+    }
+    
+    th {
+        background-color: #f2f2f2;
+    }
+    
+    .winner {
+        color: green;
+        font-weight: bold;
+    }
+    
