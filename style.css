@@ -36,21 +36,58 @@
   font-family: "Stone Age", sans-serif;
   cursor: url(./assets/images/icon-1.png), auto;
 }
-.main-bg {
-  background-color: #87c7cd;
+.splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 200;
+  text-align: center;
+  line-height: 90vh;
 }
-.instruction a {
+.splash.display-none {
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  z-index: -10;
+  text-align: center;
+  line-height: 90vh;
+  transition: all 0.5s;
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+.main-bg {
+  background-color: transparent;
+}
+.icon a {
   text-decoration: none;
   cursor: pointer;
   color: inherit;
+}
+.icon :hover{
+  cursor: url(./assets/images/icon-3.png), auto;
 }
 .img-1 {
   height: 314px;
   width: auto;
   object-fit: contain;
 }
-.start-btn {
+.start-btn a {
   display: flex;
+  text-decoration: none;
   flex-direction: column;
   border-radius: 40px;
   justify-content: center;
@@ -58,14 +95,41 @@
 }
 .start-btn button {
   width: 370px;
-  border-bottom: 8px solid rgb(152, 173, 33);
+  border-bottom: 8px solid rgb(231, 204, 204);
   clip-path: polygon(12% 0, 88% 0, 82% 100%, 6% 100%);
   transition: transform 0.3s ease;
 }
 .start-btn button:hover {
   transform: scale(1.1);
-  border-bottom: 10px solid rgb(173, 117, 33);
+  border-bottom: 8px solid rgb(255, 255, 255);
   cursor: url(./assets/images/icon-2.png), auto;
-
 }
 
+
+/* ---homepage bg-video--- */
+.background-video {
+  position: absolute;
+ right: 0;
+ bottom: 0;
+  z-index: -1;
+  object-fit: cover; 
+}
+
+@media (min-aspect-ratio:16/9){
+  .background-video{
+    width: 100%;
+    height: auto;
+  }
+}
+@media (max-aspect-ratio:16/9){
+  .background-video{
+    width: auto;
+    height: 100%;
+  }
+}
+
+/* ---score-board styling--- */
+.row p{
+  align-items: center;
+  text-align: center;
+}
