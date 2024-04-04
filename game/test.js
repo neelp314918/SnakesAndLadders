@@ -1,3 +1,7 @@
+import { ladder, snake } from "./createArtifacts.js";
+import { createRandomNumber } from "./randomNumber.js";
+import { button, turn, gameStatus } from "./game.js";
+
 // get canvas position
 const canvasPosition = document
 	.getElementById("myCanvas")
@@ -12,8 +16,6 @@ canvas.height = canvasPosition.height;
 // Get the 2D drawing context
 var ctx = canvas.getContext("2d");
 
-let img = new Image();
-img.src = "./chess-filled.png";
 let imgPlayer1 = new Image();
 imgPlayer1.src = "./assets/images/piece1.png";
 let imgPlayer2 = new Image();
@@ -31,6 +33,8 @@ let localStatus;
 // Draw the image on the canvas
 function draw() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+	drawArtifacts(ladder);
+	drawArtifacts(snake);
 	ctx.drawImage(
 		imgPlayer1,
 		getCellCoordinates(1).x,
@@ -46,7 +50,41 @@ function draw() {
 		30
 	); // Draw the image at the current position
 }
+// Draw the Snakes and Ladders artifact
+function drawArtifacts(artifact) {
+	let artifactArray = Object.entries(artifact);
+	let artifactStartPoint = 0;
+	let artifactEndPoint = 0;
+	for (let i = 0; i < artifactArray.length - 1; i++) {
+		artifactStartPoint = getCellCoordinates(Number(artifactArray[i][0]));
+		artifactEndPoint = getCellCoordinates(artifactArray[i][1]);
+		if (artifact.name === "ladder") {
+			ctx.lineWidth = 20;
+			ctx.strokeStyle = "black";
+			ctx.setLineDash([3, 9]);
+			// Begin a new Path
+			ctx.beginPath();
+			ctx.moveTo(artifactStartPoint.x, artifactStartPoint.y);
+			ctx.lineTo(artifactEndPoint.x, artifactEndPoint.y);
 
+			// Draw the Path
+			ctx.stroke();
+		} else {
+			ctx.lineWidth = 3;
+			ctx.strokeStyle = "red";
+			ctx.setLineDash([]);
+			ctx.beginPath();
+			ctx.moveTo(artifactStartPoint.x, artifactStartPoint.y);
+			ctx.quadraticCurveTo(
+				artifactStartPoint.x + 50,
+				artifactStartPoint.x + 50,
+				artifactEndPoint.x,
+				artifactEndPoint.y
+			);
+			ctx.stroke();
+		}
+	}
+}
 // Function to update the position of the image
 function update() {
 	draw(); // Redraw the canvas with the updated position
@@ -59,16 +97,12 @@ function gameLoop() {
 }
 
 // Start the game loop after the image is loaded
-img.onload = function () {
-	draw(); // Initial draw with the image at the starting position
-};
 imgPlayer1.onload = function () {
 	draw(); // Initial draw with the image at the starting position
 };
 imgPlayer2.onload = function () {
 	draw(); // Initial draw with the image at the starting position
 };
-
 function movePlayer(gameStatus, nextPosition) {
 	localStatus = structuredClone(gameStatus);
 	console.log("from test file", localStatus);
@@ -94,12 +128,17 @@ function animateMove(currentPosition, nextPosition) {
 		controlX = Math.abs(deltaX);
 		controlY = Math.abs(deltaY);
 		animatePlayer();
-		setTimeout(() => animateMove(currentPosition + 1, nextPosition), 1200);
+		setTimeout(() => animateMove(currentPosition + 1, nextPosition), 800);
+	} else {
+		button.disabled = false;
+		turn.textContent = gameStatus.currentPlayer;
 	}
 }
 
 function animatePlayer() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
+	drawArtifacts(ladder);
+	drawArtifacts(snake);
 	ctx.drawImage(
 		imgPlayer1,
 		player1Coordinates.x,
@@ -116,15 +155,15 @@ function animatePlayer() {
 	);
 
 	if (localStatus.currentPlayer === "player1") {
-		player1Coordinates.x += stepX;
-		player1Coordinates.y += stepY;
+		player1Coordinates.x += stepX * 3;
+		player1Coordinates.y += stepY * 3;
 	} else {
-		player2Coordinates.x += stepX;
-		player2Coordinates.y += stepY;
+		player2Coordinates.x += stepX * 3;
+		player2Coordinates.y += stepY * 3;
 	}
 
-	controlX -= Math.abs(stepX);
-	controlY -= Math.abs(stepY);
+	controlX -= Math.abs(stepX * 3);
+	controlY -= Math.abs(stepY * 3);
 
 	if (controlX >= 0 && controlY >= 0) {
 		requestAnimationFrame(animatePlayer);
