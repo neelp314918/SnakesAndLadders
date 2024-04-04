@@ -54,7 +54,7 @@ header {
 }
 main {
 	display: flex;
-	height: 90%;
+	height: 100%;
 }
 .section {
 	width: 50%;
@@ -71,16 +71,33 @@ main {
 	height: 100%;
 }
 .score,
-.winner {
+#winner {
 	font-family: "Press Start 2P", system-ui;
 	font-size: large;
 }
-.winner {
+#winner {
 	width: 60%;
 	display: none;
+	flex-direction: column;
+	align-items: center;
 }
-.winner img {
+#winner figure {
+	width: 50%;
+}
+#winner img {
 	width: 100%;
+}
+#winner.show {
+	display: flex;
+}
+.dice {
+	width: 20%;
+}
+.dice img {
+	width: 100%;
+}
+#dice.hide {
+	display: none;
 }
 /* BUTTON  */
 button {
@@ -96,4 +113,10 @@ button {
 button:hover {
 	transform: scale(1.1);
 	border-bottom: 10px solid rgb(173, 117, 33);
+}
+.right-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }

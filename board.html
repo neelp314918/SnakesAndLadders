@@ -6,20 +6,26 @@
 		<title>Grid test</title>
 		<link rel="stylesheet" href="./game/board.css" />
 		<script src="./game/board.js" type="module" defer></script>
-		<script src="./createArtifacts.js" type="module" defer></script>
-		<script src="./game.js" type="module" defer></script>
-		<script src="./randomNumber.js" type="module" defer></script>
-		<script src="./test.js" type="module" defer></script>
+		<script src="./game/createArtifacts.js" type="module" defer></script>
+		<script src="./game/game.js" type="module" defer></script>
+		<script src="./game/randomNumber.js" type="module" defer></script>
+		<script src="./game/test.js" type="module" defer></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&family=Press+Start+2P&family=Roboto:wght@400;700&family=Young+Serif&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<header>
+		<!-- <header>
 			<div class="logo">
 				<img
 					src="./assets/images/snakesandladders-logo-cc.png"
 					alt="Snakes and Ladder logo"
 				/>
 			</div>
-		</header>
+		</header> -->
 		<main>
 			<section class="section left-section">
 				<div class="game-board">
@@ -30,26 +36,30 @@
 			</section>
 			<section class="section right-section">
 				<p class="player-label score">
+					<span id="p1-selector"></span>
 					Player 1 Score:
 					<span id="player1-score"> 0</span>
 				</p>
 				<p class="player-label score">
+					<span id="p2-selector"></span>
 					Player 2 Score:
 					<span id="player2-score"> 0</span>
 				</p>
 				<!-- Winner -->
-				<div class="winner">
-					<div>
+				<div id="winner">
+					<figure>
 						<img src="./assets/images/cup.png" alt="" />
-					</div>
+					</figure>
 					<p><span id="turns"></span> Wins</p>
 				</div>
 				<!-- Winner -->
 				<button id="rollButton">
 					<span id="turns"></span> Roll Dice
 				</button>
+				<figure class="dice">
+					<img id="dice" src="" alt="" />
+				</figure>
 			</section>
 		</main>
 	</body>
-	
 </html>
