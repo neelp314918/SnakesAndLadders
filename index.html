@@ -41,64 +41,19 @@
   </head>
   
   <body>
-    
-    <!-- Splash Screen -->
-
-    <div class="splash">
-      <img
-        class="fade-in"
-        src="./assets/images/snakesandladders-logo-cc.png"
-        alt=""
-      />
-    </div>
-
-    <!-- Video Background -->
-
-    <div class="video-background">
-      <video autoplay muted loop id="video">
-        <source src="./assets/vid-2.mp4" type="video/mp4" />
-      </video>
-    </div>
-
-    <!-- Content starts -->
-
-    <div class="container-fluid m-0 main-bg py-1">
-      <div class="row float-end mx-3 mt-2 icon">
-        <a href="./instruction.html" title=""
-          ><i class="fas fa-2x fa-info-circle text-white"></i
-        ></a>
+    <div class="container-fluid m-0 main-bg py-3">
+      <div class="row float-end mx-3 mt-2 instruction">
+        <a href="./instruction.html" title=""><i class="fas fa-2x fa-info-circle"></i></a>
       </div>
       <div class="row p-3 d-flex justify-content-center align-items-center">
         <img src="./assets/images/snakesandladders-logo-cc.png" class="img-1" />
       </div>
-      <div class="row start-btn mt-4 justify-content-center align-items-center">
-        <a href="./board.html"
-          ><button
-            type="button"
-            class="fs-3 btn btn-danger p-4 my-2"
-            onclick="startNewGame()"
-          >
-            New Game
-          </button></a
-        >
-        <a href="./tutorial.html"
-          ><button
-            type="button"
-            class="fs-3 btn btn-success p-4 my-2"
-            onclick="showTutorial()"
-          >
-            Tutorial
-          </button></a
-        >
-        <a href="./scoreboard.html"
-          ><button
-            type="button"
-            class="fs-3 btn btn-primary p-4 my-2"
-            onclick="showScoreBoard()"
-          >
-            Score Board
-          </button></a
-        >
+      <div class="row start-btn d-flex justify-content-center align-items-center mt-4">
+        <button type="button" class="fs-3 btn btn-danger p-4 my-2" onclick="startNewGame()">New Game</button>
+        <button type="button" class="fs-3 btn btn-success p-4 my-2" onclick="showTutorial()">Tutorial</button>
+        <button type="button" class="fs-3 btn btn-primary p-4 my-2" onclick="showScoreBoard()">
+          Score Board
+        </button>
       </div>
     </div>
   </body>
